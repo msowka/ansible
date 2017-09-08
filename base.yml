@@ -8,3 +8,8 @@
     shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     args:
       creates: ~/.oh-my-zsh
+  - name: copy zshrc to user home
+    copy:
+      src: templates/zshrc
+      dest: ~/.zshrc
+      backup: yes
