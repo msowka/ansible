@@ -5,7 +5,7 @@
   - name: install dependencies
     become: true
     package: {name: "{{item}}", state: latest}
-    with_items: [curl, libselinux-python]
+    with_items: [curl]
   - name: install base terminal
     become: true
     package: {name: "{{item}}", state: latest}
@@ -27,7 +27,7 @@
       dest: ~/.zshrc
       backup: yes
 
-  - name: online isntall of prelude
+  - name: online install of prelude
     shell: sh -c "$(curl -fsSL https://git.io/epre)"
     args:
       creates: ~/.emacs.d/core/prelude-core.el
